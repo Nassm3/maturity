@@ -23,7 +23,7 @@ ui = fluidPage(
                   label = h3("Cutoff :"),
                   min = round(min(edge$value), 1),
                   max = round(max(edge$value), 1),
-                  value = round(max'edge$value),1)/2
+                  value = round(max(edge$value),1)/2
       )
     )
   ),
