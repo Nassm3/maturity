@@ -140,7 +140,7 @@ import('https://webr.r-wasm.org/v0.2.2/webr.mjs').then(async ({ WebR }) => {
       var pathname = url.pathname.replace(/.*\/__wasm__\/([0-9a-fA-F-]{36})/,"");
       var query = url.search.replace(/^\?/, '');
       webR.evalRVoid(`
-        onRequest <- options("webr_httpuv_onRequest")[[1]]]
+        onRequest <- options("webr_httpuv_onRequest")[[1]]
         if (!is.null(onRequest)) {
           onRequest(
             list(
