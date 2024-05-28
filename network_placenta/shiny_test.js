@@ -44,7 +44,7 @@ import('https://webr.r-wasm.org/v0.2.2/webr.mjs').then(async ({ WebR }) => {
 
       // Trigger the WS onOpen callbacks
       webR.evalRVoid(`
-        onWSOpen <- options('webr_httpuv_onWSOpen')[[1]]]
+        onWSOpen <- options('webr_httpuv_onWSOpen')[[1]]
         if (!is.null(onWSOpen)) {
           onWSOpen(
             ${this.handle},
@@ -64,7 +64,7 @@ import('https://webr.r-wasm.org/v0.2.2/webr.mjs').then(async ({ WebR }) => {
     async send(msg) {
       // Intercept WS message and send it via the webR channel
       webR.evalRVoid(`
-        onWSMessage <- options('webr_httpuv_onWSMessage')[[1]]]
+        onWSMessage <- options('webr_httpuv_onWSMessage')[[1]]
         if (!is.null(onWSMessage)) {
           onWSMessage(${this.handle}, FALSE, '${msg}')
         }
